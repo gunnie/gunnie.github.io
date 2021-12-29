@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/assets/images/favicon.png"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Automating Capacitor iOS builds with Github Actions | ZGunnie</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Automating Capacitor iOS builds with Github Actions" />
+<meta name="author" content="Gunther Renneboog" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Capacitor, as explained in the docs, is a cross-platform native runtime that makes it easy to build modern web apps that run natively on iOS, Android, and the Web. It’s the spiritual successor to Apache Cordova. The main advantage is that it allows for the production of native apps using only typical web developer skills. That’s a huge plus for businesses that specialize in React, Angular etc." />
+<meta property="og:description" content="Capacitor, as explained in the docs, is a cross-platform native runtime that makes it easy to build modern web apps that run natively on iOS, Android, and the Web. It’s the spiritual successor to Apache Cordova. The main advantage is that it allows for the production of native apps using only typical web developer skills. That’s a huge plus for businesses that specialize in React, Angular etc." />
+<link rel="canonical" href="http://0.0.0.0:4000/2021/02/13/capacitor-ios-ci-with-github-actions.html" />
+<meta property="og:url" content="http://0.0.0.0:4000/2021/02/13/capacitor-ios-ci-with-github-actions.html" />
+<meta property="og:site_name" content="ZGunnie" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-02-13T08:52:22-06:00" />
+<script type="application/ld+json">
+{"url":"http://0.0.0.0:4000/2021/02/13/capacitor-ios-ci-with-github-actions.html","@type":"BlogPosting","headline":"Automating Capacitor iOS builds with Github Actions","dateModified":"2021-02-13T08:52:22-06:00","datePublished":"2021-02-13T08:52:22-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/2021/02/13/capacitor-ios-ci-with-github-actions.html"},"author":{"@type":"Person","name":"Gunther Renneboog"},"description":"Capacitor, as explained in the docs, is a cross-platform native runtime that makes it easy to build modern web apps that run natively on iOS, Android, and the Web. It’s the spiritual successor to Apache Cordova. The main advantage is that it allows for the production of native apps using only typical web developer skills. That’s a huge plus for businesses that specialize in React, Angular etc.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="ZGunnie" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-main-div">
+      <a class="site-logo" href="/"><img class="responsive" alt="ZGunnie logo" src="/assets/images/logo_no_txt.png"></a>
+      <a class="site-title" href="/">ZGunnie</a>
+    </div>
+   
+    <div class="site-header-main-div">
+      <p>
+        I'm Gunther Renneboog, a Belgian programmer living in Brazil.
+        <a rel="author" href="/about.html">More about me.</a>
+      </p>
+    </div>
+  </div>
+</header><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Automating Capacitor iOS builds with Github Actions</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-02-13T08:52:22-06:00" itemprop="datePublished">Feb 13, 2021
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Gunther Renneboog</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Capacitor, as explained in the <a href="https://capacitorjs.com/docs">docs</a>, is a cross-platform native runtime that makes it easy to build modern web apps that run natively on iOS, Android, and the Web.
+It’s the spiritual successor to Apache Cordova. The main advantage is that it allows for the production of native apps using only typical web developer skills. That’s a huge plus for businesses that specialize in React, Angular etc.</p>
+
+<p>Out-of-the-box  Capacitor comes with a set of plugins that take care of native functionality, thus covering most use cases. Obviously not every project is a good match for Capacitor, you’ll have to decide if it is based on your requirements.</p>
+
+<p>Once you’ve decided to go with Capacitor, did the setup - see <a href="https://capacitorjs.com/docs/ios">instructions</a> - and some coding, you’ll quickly have the iOS app running on the simulator and/or a device. But you would still have to distribute the app yourself for others to admire your work, and that’s where continuous integration (CI) saves the day.</p>
+
+<p>Using <a href="https://github.com/features/actions">GitHub Actions</a> you can automate the iOS workflow by defining the steps in yaml format. This allows you to run the entire test, build, and distribution process, in the cloud after (for example) a push request.</p>
+
+<p>This is what a succesful build looks like on Github:
+<img class="responsive" alt="GitHub Actions " src="/assets/images/github_actions_build.png" />
+<br /></p>
+
+<h3 id="further-reading">Further reading:</h3>
+
+<p>I could provide source code, and detailed instructions, but others have already done a great job of that. Here are a few posts that helped me get started:</p>
+<ul>
+  <li><a href="https://dev.to/matt_catalfamo/how-to-build-and-manually-sign-an-ios-app-with-fastlane-2256">https://dev.to/matt_catalfamo/how-to-build-and-manually-sign-an-ios-app-with-fastlane-2256</a></li>
+  <li><a href="https://preece.dev/2020/06/ios-testflight-deploy-with-github-actions/">https://preece.dev/2020/06/ios-testflight-deploy-with-github-actions/</a></li>
+  <li><a href="https://sarunw.com/posts/github-actions-for-ios-projects/">https://sarunw.com/posts/github-actions-for-ios-projects/</a></li>
+  <li><a href="https://hartl.co/2020/02/09/CI-and-TestFlight-deployment-using-github-actions.html">https://hartl.co/2020/02/09/CI-and-TestFlight-deployment-using-github-actions.html</a></li>
+  <li><a href="https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api">https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api</a></li>
+</ul>
+
+<p>I would also like to mention the great work done by the people behind <a href="https://fastlane.tools/">fastlane</a>. They provide a lot of tools to make life easier for app developers. And all for free.</p>
+
+
+  </div><a class="u-url" href="/2021/02/13/capacitor-ios-ci-with-github-actions.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col"><ul class="social-media-list"><li><a href="https://github.com/gunnie"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">gunnie</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>Subscribe via RSS</span></a></li></ul>
+</div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

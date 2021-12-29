@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2021-02-13T10:18:29-06:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">ZGunnie</title><subtitle>A weblog by Gunther Renneboog about programming and other IT related stuff</subtitle><author><name>Gunther Renneboog</name></author><entry><title type="html">Automating Capacitor iOS builds with Github Actions</title><link href="http://0.0.0.0:4000/2021/02/13/capacitor-ios-ci-with-github-actions.html" rel="alternate" type="text/html" title="Automating Capacitor iOS builds with Github Actions" /><published>2021-02-13T08:52:22-06:00</published><updated>2021-02-13T08:52:22-06:00</updated><id>http://0.0.0.0:4000/2021/02/13/capacitor-ios-ci-with-github-actions</id><content type="html" xml:base="http://0.0.0.0:4000/2021/02/13/capacitor-ios-ci-with-github-actions.html">&lt;p&gt;Capacitor, as explained in the &lt;a href=&quot;https://capacitorjs.com/docs&quot;&gt;docs&lt;/a&gt;, is a cross-platform native runtime that makes it easy to build modern web apps that run natively on iOS, Android, and the Web.
+It’s the spiritual successor to Apache Cordova. The main advantage is that it allows for the production of native apps using only typical web developer skills. That’s a huge plus for businesses that specialize in React, Angular etc.&lt;/p&gt;
+
+&lt;p&gt;Out-of-the-box  Capacitor comes with a set of plugins that take care of native functionality, thus covering most use cases. Obviously not every project is a good match for Capacitor, you’ll have to decide if it is based on your requirements.&lt;/p&gt;
+
+&lt;p&gt;Once you’ve decided to go with Capacitor, did the setup - see &lt;a href=&quot;https://capacitorjs.com/docs/ios&quot;&gt;instructions&lt;/a&gt; - and some coding, you’ll quickly have the iOS app running on the simulator and/or a device. But you would still have to distribute the app yourself for others to admire your work, and that’s where continuous integration (CI) saves the day.&lt;/p&gt;
+
+&lt;p&gt;Using &lt;a href=&quot;https://github.com/features/actions&quot;&gt;GitHub Actions&lt;/a&gt; you can automate the iOS workflow by defining the steps in yaml format. This allows you to run the entire test, build, and distribution process, in the cloud after (for example) a push request.&lt;/p&gt;
+
+&lt;p&gt;This is what a succesful build looks like on Github:
+&lt;img class=&quot;responsive&quot; alt=&quot;GitHub Actions &quot; src=&quot;/assets/images/github_actions_build.png&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;further-reading&quot;&gt;Further reading:&lt;/h3&gt;
+
+&lt;p&gt;I could provide source code, and detailed instructions, but others have already done a great job of that. Here are a few posts that helped me get started:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev.to/matt_catalfamo/how-to-build-and-manually-sign-an-ios-app-with-fastlane-2256&quot;&gt;https://dev.to/matt_catalfamo/how-to-build-and-manually-sign-an-ios-app-with-fastlane-2256&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://preece.dev/2020/06/ios-testflight-deploy-with-github-actions/&quot;&gt;https://preece.dev/2020/06/ios-testflight-deploy-with-github-actions/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://sarunw.com/posts/github-actions-for-ios-projects/&quot;&gt;https://sarunw.com/posts/github-actions-for-ios-projects/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hartl.co/2020/02/09/CI-and-TestFlight-deployment-using-github-actions.html&quot;&gt;https://hartl.co/2020/02/09/CI-and-TestFlight-deployment-using-github-actions.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api&quot;&gt;https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I would also like to mention the great work done by the people behind &lt;a href=&quot;https://fastlane.tools/&quot;&gt;fastlane&lt;/a&gt;. They provide a lot of tools to make life easier for app developers. And all for free.&lt;/p&gt;</content><author><name>Gunther Renneboog</name></author><category term="github" /><category term="capacitor" /><category term="cordova" /><category term="ios" /><category term="ci" /><summary type="html">Capacitor, as explained in the docs, is a cross-platform native runtime that makes it easy to build modern web apps that run natively on iOS, Android, and the Web. It’s the spiritual successor to Apache Cordova. The main advantage is that it allows for the production of native apps using only typical web developer skills. That’s a huge plus for businesses that specialize in React, Angular etc.</summary></entry><entry><title type="html">Starting a blog with Jekyll and Terraform</title><link href="http://0.0.0.0:4000/2020/07/03/jekyll-blog.html" rel="alternate" type="text/html" title="Starting a blog with Jekyll and Terraform" /><published>2020-07-03T17:41:15-05:00</published><updated>2020-07-03T17:41:15-05:00</updated><id>http://0.0.0.0:4000/2020/07/03/jekyll-blog</id><content type="html" xml:base="http://0.0.0.0:4000/2020/07/03/jekyll-blog.html">&lt;p&gt;After many years of writing things up in obscure notebooks I’ve finally decided to start a weblog.
+A big step for sure, but first I had to set up the blog software. Luckily I’m not the only blogger out there who cherishes simplicity, and in this case the solution came in the form of &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since I want to focus on writing, and not bother too much with technical issues, I started looking for something that requires little setup and maintenance. So no database, web server configuration etc. Just static files would be excellent. Hence Jekyll.&lt;/p&gt;
+
+&lt;p&gt;You basically write a bunch of markdown files, and then use a Ruby gem - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt; - to output the corresponding html. Different themes are available, and customization is a breeze. On top of that the docs are clear and the community seems very active.&lt;/p&gt;
+
+&lt;p&gt;While writing a post, I’m working locally with Docker:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;jekyll
+docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--volume&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PWD&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:/srv/jekyll&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 4000:4000 &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; jekyll/jekyll:4.1.0 jekyll serve&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Any changes I make are automatically picked up so I have immediate feedback in the browser at http://localhost:4000/.&lt;/p&gt;
+
+&lt;p&gt;Once I’m ready to publish I can push my code to Github, and then use CI to deploy the site to AWS Cloudfront. That part is a little more complex. By using &lt;a href=&quot;https://www.terraform.io/&quot;&gt;Terraform&lt;/a&gt; I avoid a lot of manual configuration in the AWS console, and also benefit from all the other advantages this Infrastructure As Code (IAC) approach has to offer.&lt;/p&gt;
+
+&lt;p&gt;This is the visual result in the AWS console:
+&lt;img class=&quot;responsive&quot; alt=&quot;Visual representation of CodePipeline flow&quot; src=&quot;/assets/images/codepipeline_flow.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The source code is available on &lt;a href=&quot;https://github.com/gunnie/jekyll-blog&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you prefer working with CloudFormation &lt;a href=&quot;https://scratchpad.blog/devops/a-build-pipeline-for-jekyll-sites/&quot;&gt;this post&lt;/a&gt; is a good read as well.&lt;/p&gt;</content><author><name>Gunther Renneboog</name></author><category term="jekyll" /><category term="terraform" /><summary type="html">After many years of writing things up in obscure notebooks I’ve finally decided to start a weblog. A big step for sure, but first I had to set up the blog software. Luckily I’m not the only blogger out there who cherishes simplicity, and in this case the solution came in the form of Jekyll.</summary></entry></feed>
